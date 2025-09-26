@@ -1,6 +1,6 @@
 import json
 import pandas as pd
-from .utils import load_transactions
+from utils import load_transactions
 from .views import home_page
 from .services import investment_bank, simple_search, find_phone_transactions
 from .reports import spending_by_category, spending_by_weekday

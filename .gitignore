@@ -6,3 +6,5 @@ poetry.lock
 *.xlsx
 *.json
 .DS_Store
+run_app.py
+test_app.py

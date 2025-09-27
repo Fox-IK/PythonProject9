@@ -29,6 +29,7 @@ def test_investment_bank(sample_transactions_list):
 
 def test_simple_search(sample_transactions_list):
     """Тест простого поиска."""
-    results = simple_search("кафе", sample_transactions_list)
+    # Исправляем порядок аргументов: сначала транзакции, потом строка поиска
+    results = simple_search(sample_transactions_list, "кафе")
     assert len(results) == 1
     assert results[0]['Категория'] == 'Кафе'

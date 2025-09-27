@@ -1,38 +1,25 @@
 [tool.poetry]
 name = "transaction-analyzer"
-version = "0.1.0"
-description = "Анализатор банковских транзакций"
+version = "1.0.0"
+description = "Bank transaction analysis application"
 authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
-pandas = ">=2.0.0,<3.0.0"
-openpyxl = ">=3.1.0,<4.0.0"
-requests = ">=2.31.0,<3.0.0"
-python-dotenv = ">=1.0.0,<2.0.0"
-python-dateutil = ">=2.8.2,<3.0.0"
+python = "^3.9"
+pandas = "^2.0.0"
+openpyxl = "^3.1.0"
+requests = "^2.31.0"
+python-dateutil = "^2.8.2"
+pydantic = "^1.10.12"
+python-dotenv = "^1.0.0"
+aiohttp = "^3.8.0"
+cachetools = ">=5.3.0"
+pytest-asyncio = ">=0.21.0"
+black = ">=23.12.1"
 
-[poetry.group.dev.dependencies]
-pytest = "^7.0.0"
-pytest-cov = "^4.0.0"
-flake8 = "^5.0.0"
-black = "^22.0.0"
-isort = "^5.10.0"
-mypy = "^0.991.0"
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-mock = "^3.11.0"
+pytest-cov = "^4.1.0"
 
-[tool.black]
-line-length = 119
-exclude = '''
-/(
-  \.git
-  | __pycache__
-)/
-'''
-
-[tool.isort]
-line_length = 119
-
-[tool.mypy]
-disallow_untyped_defs = true
-warn_return_any = true
-exclude = ['venv/']

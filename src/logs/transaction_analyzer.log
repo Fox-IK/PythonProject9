@@ -1,0 +1,60 @@
+2025-09-27 22:32:18,219 - __main__ - INFO - Загрузка данных...
+2025-09-27 22:32:18,219 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 22:32:18,220 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:32:18,220 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:32:20,607 - __main__ - INFO - Загрузка данных...
+2025-09-27 22:32:20,608 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 22:32:20,608 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:32:20,609 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:36:18,943 - __main__ - INFO - Загрузка данных...
+2025-09-27 22:36:18,943 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 22:36:18,943 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:36:18,943 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:39:34,228 - __main__ - INFO - Загрузка данных...
+2025-09-27 22:39:34,229 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 22:39:34,229 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:39:34,229 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:39:38,088 - __main__ - INFO - Загрузка данных...
+2025-09-27 22:39:38,088 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 22:39:38,088 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:39:38,088 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:40:17,643 - __main__ - INFO - Загрузка данных...
+2025-09-27 22:40:17,644 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 22:40:17,645 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:40:17,645 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:40:50,211 - __main__ - INFO - Загрузка данных...
+2025-09-27 22:40:50,212 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 22:40:50,213 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:40:50,213 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:41:04,925 - __main__ - INFO - Загрузка данных...
+2025-09-27 22:41:04,926 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 22:41:04,927 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:41:04,927 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:42:25,867 - __main__ - INFO - Загрузка данных...
+2025-09-27 22:42:25,867 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 22:42:25,867 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:42:25,867 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:42:43,338 - __main__ - INFO - Загрузка данных...
+2025-09-27 22:42:43,338 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 22:42:43,338 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 22:42:43,338 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 23:12:13,905 - __main__ - INFO - Загрузка данных...
+2025-09-27 23:12:13,905 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 23:12:13,906 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 23:12:13,906 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 23:12:36,049 - __main__ - INFO - Загрузка данных...
+2025-09-27 23:12:36,049 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 23:12:36,049 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 23:12:36,049 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 23:21:59,058 - __main__ - INFO - Загрузка данных...
+2025-09-27 23:21:59,058 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 23:21:59,058 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 23:21:59,058 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 23:22:19,758 - __main__ - INFO - Загрузка данных...
+2025-09-27 23:22:19,759 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 23:22:19,759 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 23:22:19,759 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 23:34:17,097 - __main__ - INFO - Загрузка данных...
+2025-09-27 23:34:17,097 - src.utils - INFO - Загрузка данных из data/operations.xlsx
+2025-09-27 23:34:17,097 - src.utils - ERROR - Ошибка загрузки транзакций: [Errno 2] No such file or directory: 'data/operations.xlsx'
+2025-09-27 23:34:17,097 - __main__ - ERROR - Ошибка приложения: [Errno 2] No such file or directory: 'data/operations.xlsx'

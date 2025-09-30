@@ -1,0 +1,11 @@
+{
+  "user_currencies": ["USD", "EUR", "GBP", "CNY"],
+  "user_stocks": ["AAPL", "AMZN", "GOOGL", "MSFT", "TSLA", "META", "NVDA"],
+  "cashback_rules": {
+    "Супермаркеты": 0.05,
+    "Фастфуд": 0.03,
+    "Транспорт": 0.02,
+    "Развлечения": 0.02,
+    "default": 0.01
+  }
+}

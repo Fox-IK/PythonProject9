@@ -2,10 +2,10 @@
 Скрипт для генерации тестовых данных
 """
 
-import pandas as pd
-import numpy as np
-from datetime import datetime, timedelta
 import random
+from datetime import datetime, timedelta
+
+import pandas as pd
 
 
 def generate_sample_data(num_records: int = 1000) -> pd.DataFrame:

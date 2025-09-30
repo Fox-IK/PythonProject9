@@ -3,7 +3,6 @@
 Упрощенный запуск приложения
 """
 
-import os
 import sys
 from pathlib import Path
 
@@ -19,14 +18,14 @@ Path('data').mkdir(exist_ok=True)
 def main():
     """Основная функция"""
     try:
-        from src.views import main_page, events_page
         from src.utils import load_transactions, load_user_settings
+        from src.views import events_page, main_page
 
         print("🚀 Запуск Transaction Analyzer...")
 
         # Загрузка данных
-        df = load_transactions()
-        settings = load_user_settings()
+        load_transactions()
+        load_user_settings()
 
         # Генерация данных для веб-страниц
         current_time = "2023-12-20 15:30:00"

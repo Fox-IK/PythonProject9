@@ -1,10 +1,10 @@
-import aiohttp
 import asyncio
-import json
-import cachetools
-from datetime import datetime
-from typing import Dict, List, Any, Optional
 import logging
+from typing import Dict, List, Optional
+
+import aiohttp
+import cachetools
+
 from .config import settings
 
 logger = logging.getLogger(__name__)
@@ -20,6 +20,7 @@ class APIClient:
         self.session: Optional[aiohttp.ClientSession] = None
 
     async def __aenter__(self):
+        import aiohttp
         self.session = aiohttp.ClientSession()
         return self
 
@@ -62,7 +63,8 @@ class APIClient:
                 return [{"currency": "RUB", "rate": 1.0}]
 
             async with self.session.get(
-                    f"{settings.exchangerate_url}?base={base_currency}&symbols={','.join(target_currencies)}"
+                    f"{settings.exchangerate_url}?base={base_currency}"
+                    f"&symbols={','.join(target_currencies)}"
             ) as response:
                 if response.status == 200:
                     data = await response.json()
@@ -88,7 +90,8 @@ class APIClient:
             target_currencies = [c for c in currencies if c != "RUB"]
 
             async with self.session.get(
-                    f"{settings.currency_api_url}?apikey={settings.currency_api_key}&base_currency={base_currency}"
+                    f"{settings.currency_api_url}?apikey={settings.currency_api_key}"
+                    f"&base_currency={base_currency}"
             ) as response:
                 if response.status == 200:
                     data = await response.json()
@@ -136,7 +139,8 @@ class APIClient:
                     continue
 
                 async with self.session.get(
-                        f"{settings.alpha_vantage_url}?function=GLOBAL_QUOTE&symbol={stock}&apikey={settings.alpha_vantage_api_key}"
+                        f"{settings.alpha_vantage_url}?function=GLOBAL_QUOTE"
+                        f"&symbol={stock}&apikey={settings.alpha_vantage_api_key}"
                 ) as response:
                     if response.status == 200:
                         data = await response.json()
@@ -199,6 +203,8 @@ class SyncAPIClient:
 
     @staticmethod
     def get_currency_rates(currencies: List[str]) -> List[Dict[str, float]]:
+        """Получение курсов валют"""
+
         async def _fetch():
             async with APIClient() as client:
                 return await client.get_currency_rates(currencies)
@@ -207,6 +213,8 @@ class SyncAPIClient:
 
     @staticmethod
     def get_stock_prices(stocks: List[str]) -> List[Dict[str, float]]:
+        """Получение цен акций"""
+
         async def _fetch():
             async with APIClient() as client:
                 return await client.get_stock_prices(stocks)

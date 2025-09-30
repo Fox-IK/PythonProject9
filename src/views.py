@@ -1,12 +1,17 @@
 import logging
-from typing import Dict, List, Any, Optional
+from typing import Any, Dict, List, Optional
 
 import pandas as pd
-import pytest
 
 from .api_client import SyncAPIClient
-from .utils import (load_transactions, get_date_range, filter_transactions_by_date,
-                    get_greeting, load_user_settings, calculate_cashback)
+from .utils import (
+    calculate_cashback,
+    filter_transactions_by_date,
+    get_date_range,
+    get_greeting,
+    load_transactions,
+    load_user_settings,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -65,8 +70,8 @@ class DataProcessor:
         for card in card_numbers:
             card_df = df[df['Номер карты'] == card]
             # Только успешные операции расходов
-            expenses_df = card_df[(card_df['Статус'] == 'OK') &
-                                  (card_df['Сумма операции'] > 0)]
+            expenses_df = card_df[(card_df['Статус'] == 'OK')
+                                  & (card_df['Сумма операции'] > 0)]
 
             if expenses_df.empty:
                 continue
@@ -206,37 +211,3 @@ def events_page(date: str, period: str = 'M',
     except Exception as e:
         logger.error(f"Ошибка генерации страницы событий: {e}")
         return {'error': str(e)}
-
-
-# tests/test_views.py - исправим тестовые данные
-@pytest.fixture
-def sample_transactions():
-    return pd.DataFrame({
-        'Дата операции': pd.to_datetime(['2023-12-01', '2023-12-05', '2023-12-10']),
-        'Номер карты': ['1234567812345814', '1234567812345814', '1234567812347512'],
-        'Статус': ['OK', 'OK', 'OK'],  # Все успешные операции
-        'Сумма операции': [1000.0, 500.0, 300.0],  # Все расходы (положительные)
-        'Категория': ['Супермаркеты', 'Фастфуд', 'Транспорт'],
-        'Описание': ['Магазин', 'Кафе', 'Такси'],
-        'Сумма платежа': [1000.0, 500.0, 300.0]
-    })
-
-
-def test_data_processor(sample_transactions, sample_settings):
-    processor = DataProcessor()
-
-    result = processor.process_main_page_data(
-        sample_transactions, '2023-12-20 15:30:00', sample_settings
-    )
-
-    # Теперь должно быть 2 карты с расходами
-    assert len(result['cards']) == 2
-    assert len(result['top_transactions']) == 3
-
-    # Проверяем расчет кешбэка (ИСПРАВЛЕНО ожидание)
-    card_1 = result['cards'][0]
-    assert 'last_digits' in card_1
-    assert 'total_spent' in card_1
-    assert 'cashback' in card_1
-    # 1% от 1500 (1000 + 500) = 15.0
-    assert card_1['cashback'] == 15.0

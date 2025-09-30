@@ -1,7 +1,8 @@
 import os
-from typing import List, Dict, Any
-from pydantic import BaseSettings, validator
+from typing import List
+
 from dotenv import load_dotenv
+from pydantic import BaseSettings
 
 load_dotenv()
 

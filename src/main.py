@@ -2,11 +2,9 @@
 """
 Основной модуль приложения для анализа транзакций
 """
-
-import os
-import logging
 import argparse
 import json
+import logging
 from datetime import datetime
 from pathlib import Path
 
@@ -79,27 +77,23 @@ class TransactionAnalyzer:
         """Генерация всех отчетов"""
         from src.reports import ReportGenerator  # Добавлен импорт
 
-        reports = {}
+        reports = {'spending_by_category': ReportGenerator.spending_by_category(
+            self.transactions_df, 'Супермаркеты'
+        ), 'spending_by_weekday': ReportGenerator.spending_by_weekday(
+            self.transactions_df
+        ), 'spending_by_workday': ReportGenerator.spending_by_workday(
+            self.transactions_df
+        ), 'monthly_summary': ReportGenerator.monthly_summary(
+            self.transactions_df
+        )}
 
         # Отчет по категориям
-        reports['spending_by_category'] = ReportGenerator.spending_by_category(
-            self.transactions_df, 'Супермаркеты'
-        )
 
         # Отчет по дням недели
-        reports['spending_by_weekday'] = ReportGenerator.spending_by_weekday(
-            self.transactions_df
-        )
 
         # Отчет по рабочим/выходным дням
-        reports['spending_by_workday'] = ReportGenerator.spending_by_workday(
-            self.transactions_df
-        )
 
         # Сводный отчет
-        reports['monthly_summary'] = ReportGenerator.monthly_summary(
-            self.transactions_df
-        )
 
         return reports
 
@@ -146,7 +140,7 @@ def main():
                     print(f"Тип данных: {type(report_data)}")
                     print(report_data)
 
-            print(f"\n📊 Отчеты сохранены в папке 'reports/'")
+            print("\n Отчеты сохранены в папке 'reports/'")
 
         elif args.command == 'analyze':
             # Анализ данных

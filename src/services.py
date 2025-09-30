@@ -1,9 +1,9 @@
-import re
 import logging
+import re
 from datetime import datetime
-from typing import Dict, List, Any, Callable, Optional
-from functools import wraps, reduce
-import operator
+from functools import reduce, wraps
+from typing import Any, Callable, Dict, List
+
 import pandas as pd
 
 logger = logging.getLogger(__name__)
@@ -39,7 +39,6 @@ class CashbackAnalyzer:
                     continue
 
                 category_data = filtered_data[filtered_data['Категория'] == category]
-                total_spent = category_data['Сумма операции'].sum()
 
                 # Расчет кешбэка по сложной логике
                 from .utils import calculate_cashback
@@ -80,8 +79,8 @@ class InvestmentCalculator:
 
                 trans_date = datetime.strptime(transaction['Дата операции'], '%Y-%m-%d')
 
-                if (trans_date.year == target_month.year and
-                        trans_date.month == target_month.month):
+                if (trans_date.year == target_month.year
+                        and trans_date.month == target_month.month):
 
                     amount = float(transaction['Сумма операции'])
                     if amount > 0:  # Только расходы
@@ -130,8 +129,8 @@ class TransactionSearcher:
             category = str(transaction.get('Категория', '')).lower()
             search_lower = search_string.lower()
 
-            return (search_lower in description or
-                    search_lower in category)
+            return (search_lower in description
+                    or search_lower in category)
 
         return list(filter(search_filter, transactions))
 
@@ -165,8 +164,8 @@ class TransactionSearcher:
             category = transaction.get('Категория', '')
             description = str(transaction.get('Описание', ''))
 
-            return (category == 'Переводы' and
-                    bool(re.search(name_pattern, description)))
+            return (category == 'Переводы'
+                    and bool(re.search(name_pattern, description)))
 
         return list(filter(transfer_filter, transactions))
 

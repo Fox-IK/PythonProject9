@@ -1,6 +1,18 @@
+from unittest.mock import patch
+
+import pandas as pd
 import pytest
 
-from src.services import investment_bank, simple_search
+from src.services import (
+    CashbackAnalyzer,
+    InvestmentCalculator,
+    TransactionSearcher,
+    compose,
+    investment_bank,
+    log_service_call,
+    profitable_cashback_categories,
+    simple_search,
+)
 
 
 @pytest.fixture
@@ -34,25 +46,6 @@ def test_simple_search(sample_transactions_list):
     results = simple_search(sample_transactions_list, "кафе")
     assert len(results) == 1
     assert results[0]['Категория'] == 'Кафе'
-
-
-import pytest
-from unittest.mock import patch
-from src.services import (
-    profitable_cashback_categories,
-    investment_bank,
-    simple_search,
-    search_by_phone,
-    search_by_person_transfers,
-    CashbackAnalyzer,
-    InvestmentCalculator,
-    TransactionSearcher,
-    compose,
-    pipe,
-    log_service_call
-)
-import pandas as pd
-from datetime import datetime
 
 
 class TestCashbackAnalyzer:
@@ -219,6 +212,7 @@ class TestFunctionalUtilities:
         result = composed(3)  # square(3) = 9, double(9) = 18
 
         assert result == 18
+
 
 class TestServiceDecorators:
     """Тесты декораторов сервисов"""

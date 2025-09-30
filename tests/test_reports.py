@@ -1,15 +1,17 @@
-import pytest
-import pandas as pd
-import numpy as np
-from datetime import datetime, timedelta
-import tempfile
 import json
-import os
-from unittest.mock import patch, MagicMock
+from datetime import datetime
+from unittest.mock import patch
+
+import numpy as np
+import pandas as pd
+import pytest
 
 from src.reports import (
-    ReportGenerator, spending_by_category, spending_by_weekday,
-    spending_by_workday, report_decorator
+    ReportGenerator,
+    report_decorator,
+    spending_by_category,
+    spending_by_weekday,
+    spending_by_workday,
 )
 
 

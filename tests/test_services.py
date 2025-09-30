@@ -1,4 +1,5 @@
 import pytest
+
 from src.services import investment_bank, simple_search
 
 

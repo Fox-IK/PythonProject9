@@ -1,14 +1,12 @@
 # tests/test_utils.py
-import pytest
-from src.utils import (
-    get_greeting, get_date_range, calculate_cashback,
-    DataValidator, load_user_settings
-)
-from datetime import datetime
-import pandas as pd
 import json
-import tempfile
 import os
+import tempfile
+from datetime import datetime
+
+import pandas as pd
+
+from src.utils import DataValidator, calculate_cashback, get_date_range, get_greeting, load_user_settings
 
 
 class TestUtils:
@@ -84,4 +82,3 @@ class TestUtils:
         finally:
             src.utils.settings.user_settings_path = original_path
             os.unlink(temp_path)
-

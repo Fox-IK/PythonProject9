@@ -1,7 +1,6 @@
-import pytest
 import pandas as pd
-from datetime import datetime, timedelta
-import os
+import pytest
+
 
 @pytest.fixture
 def sample_transactions():
@@ -17,6 +16,7 @@ def sample_transactions():
         'Сумма платежа': [1000.0, 500.0] * 50
     })
 
+
 @pytest.fixture
 def sample_settings():
     """Фикстура с настройками"""
@@ -29,6 +29,7 @@ def sample_settings():
             "default": 0.01
         }
     }
+
 
 @pytest.fixture(autouse=True)
 def setup_teardown():

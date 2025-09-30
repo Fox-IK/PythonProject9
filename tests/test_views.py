@@ -1,9 +1,10 @@
 # tests/test_views.py
-import pytest
-from src.views import main_page, events_page, DataProcessor
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
+
 import pandas as pd
-from datetime import datetime
+import pytest
+
+from src.views import DataProcessor, events_page, main_page
 
 
 class TestViews:
